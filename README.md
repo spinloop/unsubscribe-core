@@ -1,0 +1,2 @@
+# unsubscribe-core
+unsubscribe api
