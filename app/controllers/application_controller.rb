@@ -1,5 +1,16 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  after_filter :set_access_control_headers
+
+  def set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Request-Method'] = '*'
+  end
+
+  if Rails.env.production?
+    rescue_from StandardError, with: :generic_json_500
+  end
+
+  private def generic_json_500
+    render json: { error: "Internal Server Error" }, status: :internal_server_error
+  end
 end
