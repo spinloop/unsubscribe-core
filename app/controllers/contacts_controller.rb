@@ -1,6 +1,8 @@
 class ContactsController < ApplicationController
   def create
-    contact = Contact.new(contact_params)
+    contact = Contact.find_or_initialize_by({email: contact_params[:email]})
+
+    contact.assign_attributes(contact_params)
 
     if contact.save
       render json: contact_params, status: 201
