@@ -1,7 +1,9 @@
 class ContactsController < ApplicationController
   def create
-    contact = Contact.new(contact_params)
-    
+    contact = Contact.find_or_initialize_by({email: contact_params[:email]})
+
+    contact.assign_attributes(contact_params)
+
     if contact.save
       render json: contact_params, status: 201
     else
@@ -10,6 +12,6 @@ class ContactsController < ApplicationController
   end
 
   private def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :email)
+    params.require(:contact).permit(:first_name, :last_name, :email, :message)
   end
 end
