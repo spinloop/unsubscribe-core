@@ -5,6 +5,8 @@ class ContactsController < ApplicationController
     contact.assign_attributes(contact_params)
 
     if contact.save
+      NewContactMailer.new_contact_email(contact).deliver_later
+
       render json: contact_params, status: 201
     else
       render json: contact.errors.messages, status: 422
