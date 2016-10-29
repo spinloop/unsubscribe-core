@@ -1,4 +1,67 @@
-<div><%= @contact.first_name %></div>
-<div><%= @contact.last_name %></div>
-<div><%= @contact.email %></div>
-<div><%= @contact.message %></div>
+<table class="body">
+  <tr>
+    <td class="center" align="center" valign="top">
+      <center data-parsed="">
+        <table class="container text-center">
+          <tbody>
+            <tr>
+              <td>
+                <table class="row">
+                  <tbody>
+                    <tr>
+                      <th class="small-12 large-12 columns first last">
+                        <table>
+                          <tr>
+                            <th>
+                              <h4 style="padding-top: 20px;font-weight: 800;color:#888889;">Message</h4>
+                              <p>
+                                "<%= @contact.message %>"
+                              </p>
+                              <div style="height: 3px; width: 100%; background-color: #e3e3e3; margin-top:30px; margin-bottom: 30px;"></div>
+                              <table class="callout">
+                                <h4 style="padding-top: 20px;font-weight: 800;color:#888889;">Contact Info</h4>
+                                <tr>
+                                  <td class="callout-inner secondary">
+                                    <table class="row">
+                                      <tbody>
+                                        <tr>
+                                          <th class="small-3 large-3 columns" style="padding-left:0px;">
+                                            <table>
+                                              <tr>
+                                                <th>
+                                                  <p><span style="font-size: 12px; color: #888888;">First Name</span><br><%= @contact.first_name %></p>
+                                                </th>
+                                              </tr>
+                                            </table>
+                                          </th>
+                                          <th class="small-3 large-3 columns first">
+                                            <table>
+                                              <tr>
+                                                <th>
+                                                  <p><span style="font-size: 12px; color: #888888;">Last Name </span><br><%= @contact.last_name %></p>
+                                                </th>
+                                              </tr>
+                                            </table>
+                                          </th>
+                                          <th class="small-3 large-3 columns first">
+                                            <table>
+                                              <tr>
+                                                <th>
+                                                  <p><span style="font-size: 12px; color: #888888;">Email</span><br><%= @contact.email %></p>
+                                                </th>
+                                              </tr>
+                                            </table>
+                                          </th>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </th>
+                          </tr>
+                        </table>
+                      </th>
+                    </tr>
+                  </tbody>
+                </table>
