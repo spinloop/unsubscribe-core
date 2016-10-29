@@ -48,4 +48,7 @@ group :development, :test do
 
   # allows `binding.pry`
   gem 'pry'
+
+  # create env variables
+  gem 'dotenv-rails'
 end
