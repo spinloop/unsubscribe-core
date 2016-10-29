@@ -3,10 +3,9 @@ class NewContactMailer < ApplicationMailer
     @contact = contact
 
     headers = {
-      from:          'spinloop@gmail.com',
-      to:            'spinloop@gmail.com',
-      bcc:           'spinloop@gmail.com',
-      subject:       'New Contact Request',
+      from:          ENV['CONTACT_EMAIL_FROM'],
+      to:            ENV['CONTACT_EMAIL_TO'],
+      bcc:           ENV['CONTACT_EMAIL_BCC'],
       template_name: 'new_contact_email',
     }
 
