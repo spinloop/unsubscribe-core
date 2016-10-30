@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
 gem 'rack-cors'
 
+# check for valid emails
+gem 'valid_email'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -48,4 +51,7 @@ group :development, :test do
 
   # allows `binding.pry`
   gem 'pry'
+
+  # create env variables
+  gem 'dotenv-rails'
 end
